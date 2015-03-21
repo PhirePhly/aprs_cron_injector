@@ -23,6 +23,7 @@ Example:
     $ $EDITOR /usr/local/bin/aprs_OBJNAME.sh # Configure script header for object
     $ crontab -e # Add a line such as */15 * * * * /usr/local/bin/aprs_OBJNAME.sh
 
+This script is based on work by VK2XJG, ZL1AMW, KC6HUR, and VE7LTD
 
 ## APRS-IS Configuration Parameters
 
