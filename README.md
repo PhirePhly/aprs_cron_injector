@@ -18,6 +18,7 @@ at the top of the script. Then add a line to your cron table scheduling
 this script to be run periodically.
 
 Example:
+
     $ cp ./aprscroninjector.sh /usr/local/bin/aprs_OBJNAME.sh
     $ $EDITOR /usr/local/bin/aprs_OBJNAME.sh # Configure script header for object
     $ crontab -e # Add a line such as */15 * * * * /usr/local/bin/aprs_OBJNAME.sh
