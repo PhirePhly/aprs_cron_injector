@@ -25,12 +25,12 @@ this script to be run periodically.
 Example:
 
     $ cp ./aprscroninjector.sh /usr/local/bin/aprs_OBJNAME.sh
-    $ $EDITOR /usr/local/bin/aprs_OBJNAME.sh # Configure script header for object
+    $ $EDITOR /usr/local/bin/aprs_OBJNAME.sh # Configure script variables for object
     $ crontab -e # Add a line such as */15 * * * * /usr/local/bin/aprs_OBJNAME.sh
 
 This script is based on work by VK2XJG, ZL1AMW, KC6HUR, and VE7LTD
 
-## APRS-IS Configuration Parameters
+### APRS-IS Configuration Parameters
 
 When multiple injector scripts are being run on a single system, they may use
 the same APRS-IS login. 
@@ -40,7 +40,7 @@ the same APRS-IS login.
 * Replace APRS_SERVER=noam.aprs2.net with your local APRS-IS server
 * Leave APRS_PORT=14580 unless your needs require a different server port
 
-## Object Configuration Parameters
+### Object Configuration Parameters
 
 These parameters control the information beaconed as the object.
 
@@ -50,7 +50,7 @@ Pad the name with spaces to reach the nine character requirement
 digits with spaces to locate the object less specifically
 * OBJ_LONG - DDDMM.mmE or DDDMM.mmW longitude of the object.
 Replace least significant digits with spaces to locate the object less specifically
-* OVERLAY + SYMBOL - The table selector and symbol selector based on 
+* OBJ_OVERLAY + OBJ_SYMBOL - The table selector and symbol selector based on 
 the APRS icon set (see http://www.aprs.org/symbols.html)
 * OBJ_COMMENT - A <40 character comment describing the object
 
