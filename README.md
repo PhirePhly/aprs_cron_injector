@@ -13,6 +13,11 @@ This beacon will only be sent to the APRS-IS Internet backbone, so further
 work is needed to configure RF-gates to correctly gate the beaconed objects
 to any local RF LAN.
 
+This script should only be used when the user can not justify deploying a
+more sophisticated APRS client. If additional beacons beyond objects or
+beaconing directly to RF are desirable, users should consider deploying a
+complete APRS system such as aprx ( https://github.com/PhirePhly/aprx )
+
 To use this script, make a local copy of it and edit the set of variables
 at the top of the script. Then add a line to your cron table scheduling
 this script to be run periodically.

@@ -17,7 +17,7 @@ APRS_PORT="14580"
 
 OBJ_NAME="         "
 OBJ_LAT="0000.00N"
-OBJ_LONG="00000.00E"
+OBJ_LONG="00000.00W"
 OBJ_OVERLAY="/"
 OBJ_SYMBOL="r"
 OBJ_COMMENT=""
@@ -37,6 +37,14 @@ if [ $APRS_CALL = "NOCALL" ]; then
 fi
 if [ $APRS_CALL = "MYCALL" ]; then
 	echo "ERROR: MYCALL not valid APRS Callsign"
+	exit 1
+fi
+if [ ${#APRS_CALL} -lt 3 ]; then
+	echo "ERROR: APRS callsign must be at least three characters"
+	exit 1
+fi
+if [ ${#APRS_CALL} -gt 9 ]; then
+	echo "ERROR: APRS callsign may not be longer than nine characters"
 	exit 1
 fi
 
