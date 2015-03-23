@@ -82,7 +82,7 @@ if [ ${#OBJ_COMMENT} -gt 43 ]; then
 fi
 
 # Dither beaconing to not slam APRS network on the top of the interval
-sleep `expr $RANDOM % 300`
+sleep $(( $RANDOM % 300 ))
 
 # Generate Beacon text and inject into APRS-IS backbone
 TIMESTAMP="`date -u +%d%H%M`z"
