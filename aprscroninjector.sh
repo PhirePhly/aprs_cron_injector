@@ -28,56 +28,56 @@ OBJ_COMMENT=""
 # Parameter verification
 APRS_CALL=`echo $APRS_CALL | tr '[:lower:]' '[:upper:]'`
 if [ $APRS_CALL = "N0CALL" ]; then
-	echo "ERROR: N0CALL not valid APRS Callsign"
+	echo "ERROR: N0CALL not valid APRS Callsign" 1>&2
 	exit 1
 fi
 if [ $APRS_CALL = "NOCALL" ]; then
-	echo "ERROR: NOCALL not valid APRS Callsign"
+	echo "ERROR: NOCALL not valid APRS Callsign" 1>&2
 	exit 1
 fi
 if [ $APRS_CALL = "MYCALL" ]; then
-	echo "ERROR: MYCALL not valid APRS Callsign"
+	echo "ERROR: MYCALL not valid APRS Callsign" 1>&2
 	exit 1
 fi
 if [ ${#APRS_CALL} -lt 3 ]; then
-	echo "ERROR: APRS callsign must be at least three characters"
+	echo "ERROR: APRS callsign must be at least three characters" 1>&2
 	exit 1
 fi
 if [ ${#APRS_CALL} -gt 9 ]; then
-	echo "ERROR: APRS callsign may not be longer than nine characters"
+	echo "ERROR: APRS callsign may not be longer than nine characters" 1>&2
 	exit 1
 fi
 
 if [ $APRS_PASS = "-1" ]; then
-	echo "ERROR: APRS-IS Passcode required for object injection"
+	echo "ERROR: APRS-IS Passcode required for object injection" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_NAME} -lt 9 ]; then
-	echo "ERROR: Object name must be space-padded to nine characters"
+	echo "ERROR: Object name must be space-padded to nine characters" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_NAME} -gt 9 ]; then
-	echo "ERROR: Object name too long; may only be nine characters"
+	echo "ERROR: Object name too long; may only be nine characters" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_LAT} -ne 8 ]; then
-	echo "ERROR: Object latitude must match DDMM.mmN format"
+	echo "ERROR: Object latitude must match DDMM.mmN format" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_LONG} -ne 9 ]; then
-	echo "ERROR: Object longitude must match DDDMM.mmE format"
+	echo "ERROR: Object longitude must match DDDMM.mmE format" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_OVERLAY} -ne 1 ]; then
-	echo "ERROR: Object table or overlay selection must be a single character"
+	echo "ERROR: Object table or overlay selection must be a single character" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_SYMBOL} -ne 1 ]; then
-	echo "ERROR: Object symbol must be a single character"
+	echo "ERROR: Object symbol must be a single character" 1>&2
 	exit 1
 fi
 if [ ${#OBJ_COMMENT} -gt 43 ]; then
-	echo "ERROR: Object comment field may not exceed 43 characters"
+	echo "ERROR: Object comment field may not exceed 43 characters" 1>&2
 	exit 1
 fi
 
